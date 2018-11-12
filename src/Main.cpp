@@ -8,27 +8,27 @@
 
 int main() {
   Originator originator;
-  Caretaker careTaker;
+  Caretaker caretaker;
 
   std::string input;
 
   std::cout << "> ";
   while(std::cin >> input) {
     if(input == "undo") {
-      if(careTaker.hasMementos()) {
-        Memento* memento = careTaker.getLatestMemento();
-        originator.setMemento(*memento);
-
-        careTaker.removeLatestMemento();
-        delete memento;
+      if(caretaker.hasMementos()) {
+        originator.setMemento(*caretaker.getLatestMemento());
+        caretaker.deleteLatestMemento();
       }
     } else {
-      Memento* memento = originator.createMemento();
-      careTaker.insertMemento(memento);
+      caretaker.insertMemento(originator.createMemento());
       originator.append(input);
     }
 
     originator.print();
     std::cout << "> ";
+  }
+
+  while(caretaker.hasMementos()) {
+    caretaker.deleteLatestMemento();
   }
 }

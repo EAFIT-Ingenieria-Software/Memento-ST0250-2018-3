@@ -8,7 +8,8 @@ Memento* Caretaker::getLatestMemento() {
   return mementos.top();
 }
 
-void Caretaker::removeLatestMemento() {
+void Caretaker::deleteLatestMemento() {
+  delete mementos.top();
   mementos.pop();
 }
 

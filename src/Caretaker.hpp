@@ -7,7 +7,7 @@ class Caretaker {
  public:
   void insertMemento(Memento* m);
   Memento* getLatestMemento();
-  void removeLatestMemento();
+  void deleteLatestMemento();
   bool hasMementos();
  private:
   std::stack<Memento*> mementos;
