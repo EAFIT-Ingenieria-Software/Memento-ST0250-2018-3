@@ -2,8 +2,8 @@
 
 In order to run the program, you'd need to compile it.
 
-> cd src
-> make
+> cd src\
+> make\
 > ./Main
 
 ## Members
